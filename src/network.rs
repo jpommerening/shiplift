@@ -32,7 +32,7 @@ impl<'docker> Networks<'docker> {
     pub async fn list(
         &self,
         opts: &NetworkListOptions,
-    ) -> Result<Vec<NetworkInfo>> {
+    ) -> Result<Vec<NetworkDetails>> {
         let mut path = vec!["/networks".to_owned()];
         if let Some(query) = opts.serialize() {
             path.push(query);
